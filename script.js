@@ -1,54 +1,35 @@
-// Dummy data om te testen
-const evenementen = [
-    {
-        name: 'Lassie: Een Nieuw Avontuur',
-        starttime: '2024-10-13T15:00:00+02:00',
-        endtime: '2024-10-13T16:40:00+02:00',
-        warme_maaltijd: 'Geen warme maaltijd informatie'
-    },
-    {
-        name: 'The Healing',
-        starttime: '2024-10-13T20:00:00+02:00',
-        endtime: '2024-10-13T21:40:00+02:00',
-        warme_maaltijd: '18:10'
+// Functie om een bestand van GitHub te laden en weer te geven
+async function loadGitHubFile(fileName, elementId) {
+    const repo = 'JorenEngels/Schermen-CCZ-WebApp';
+    const branch = 'main';
+    const url = `https://raw.githubusercontent.com/${repo}/${branch}/${fileName}`;
+
+    try {
+        const response = await fetch(url);
+        if (response.ok) {
+            const content = await response.text();
+            document.getElementById(elementId).innerText = content;
+        } else {
+            console.error(`Fout bij het laden van ${fileName}: ${response.status}`);
+        }
+    } catch (error) {
+        console.error(`Error fetching file ${fileName}:`, error);
     }
-];
-
-// Functie om de tijd netjes weer te geven
-function formatDateTime(dateTimeStr) {
-    const date = new Date(dateTimeStr);
-    const formattedDate = date.toLocaleDateString('nl-BE');
-    const formattedTime = date.toLocaleTimeString('nl-BE', { hour: '2-digit', minute: '2-digit' });
-    return `Datum: ${formattedDate} // Tijd: ${formattedTime}`;
 }
 
-// Functie om de evenementeninformatie weer te geven
-function displayEvents(events) {
-    const eventInfoDiv = document.getElementById('event-info');
+// Functie om alle relevante bestanden op te halen en te tonen
+function loadAllFiles() {
+    // Haal elk bestand op en toon het in het juiste HTML-element
+    loadGitHubFile('Date1.txt', 'date1');
+    loadGitHubFile('Meal1.txt', 'meal1');
+    loadGitHubFile('Naam1.txt', 'eventName1');
+    loadGitHubFile('Starttime1.txt', 'startTime1');
+    loadGitHubFile('Time1.txt', 'time1');
+    loadGitHubFile('TimeSchedule1.txt', 'timeSchedule1');
+    loadGitHubFile('Publieksaantal1.txt', 'publicAmount1');
 
-    events.forEach(event => {
-        const eventDiv = document.createElement('div');
-        eventDiv.classList.add('event');
-
-        const eventName = document.createElement('h2');
-        eventName.textContent = `Evenement: ${event.name}`;
-        eventDiv.appendChild(eventName);
-
-        const startTime = document.createElement('p');
-        startTime.textContent = `Starttijd: ${formatDateTime(event.starttime)}`;
-        eventDiv.appendChild(startTime);
-
-        const endTime = document.createElement('p');
-        endTime.textContent = `Eindtijd: ${formatDateTime(event.endtime)}`;
-        eventDiv.appendChild(endTime);
-
-        const warmeMaaltijd = document.createElement('p');
-        warmeMaaltijd.textContent = `Warme maaltijd: ${event.warme_maaltijd}`;
-        eventDiv.appendChild(warmeMaaltijd);
-
-        eventInfoDiv.appendChild(eventDiv);
-    });
+    // Als er meer bestanden zijn, kun je deze hier toevoegen
 }
 
-// Evenementen weergeven op de pagina
-displayEvents(evenementen);
+// Roep de functie aan wanneer de pagina wordt geladen
+window.onload = loadAllFiles;
