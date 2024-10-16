@@ -1,2 +1,10 @@
-Activiteit (start): 15:00
-Activiteit (stop): 16:50
+Aankomst Techniek: 12:30
+Start Opbouw: 13:00
+Start Voorstelling: 20:00
+Einde Voorstelling: 21:00
+Start Pauze: 21:00
+Einde Pauze: 21:20
+Start Voorstelling: 21:20
+Einde Voorstelling: 22:20
+Afbouw (start): 22:20
+Afbouw (stop): 00:20
