@@ -1,28 +1,49 @@
+/* Algemene stijl */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-#content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 80%;
-  max-width: 800px;
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
 }
 
 h1 {
-  text-align: center;
-  color: #333;
+    margin: 0;
 }
 
-#event-info {
-  margin-top: 20px;
+main {
+    padding: 1rem;
+}
+
+#eventInfo {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    font-size: 1.1rem;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
