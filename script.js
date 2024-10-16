@@ -28,7 +28,7 @@ function loadAllFiles() {
     loadGitHubFile('TimeSchedule1.txt', 'timeSchedule1');
     loadGitHubFile('Publieksaantal1.txt', 'publicAmount1');
 
-    // Als er meer bestanden zijn, kun je deze hier toevoegen
+    // Als er meer bestanden zijn, kun je deze hier toevoegen (bijv. Date2.txt, enz.)
 }
 
 // Roep de functie aan wanneer de pagina wordt geladen
