@@ -1,4 +1,3 @@
-// Functie om een bestand van GitHub te laden en weer te geven
 async function loadGitHubFile(fileName, elementId) {
     const repo = 'JorenEngels/Schermen-CCZ-WebApp';
     const branch = 'main';
@@ -9,27 +8,27 @@ async function loadGitHubFile(fileName, elementId) {
         if (response.ok) {
             const content = await response.text();
             document.getElementById(elementId).innerText = content;
+            console.log(`Bestand geladen: ${fileName}`);
         } else {
             console.error(`Fout bij het laden van ${fileName}: ${response.status}`);
+            document.getElementById(elementId).innerText = `Fout bij het laden van ${fileName}`;
         }
     } catch (error) {
         console.error(`Error fetching file ${fileName}:`, error);
+        document.getElementById(elementId).innerText = `Error fetching ${fileName}`;
     }
 }
 
-// Functie om alle relevante bestanden op te halen en te tonen
-function loadAllFiles() {
-    // Haal elk bestand op en toon het in het juiste HTML-element
+// Deze functies laden de specifieke bestanden van GitHub en voegen ze toe aan de HTML-elementen.
+function loadEventDetails() {
     loadGitHubFile('Date1.txt', 'date1');
     loadGitHubFile('Meal1.txt', 'meal1');
-    loadGitHubFile('Naam1.txt', 'eventName1');
-    loadGitHubFile('Starttime1.txt', 'startTime1');
+    loadGitHubFile('Naam1.txt', 'name1');
+    loadGitHubFile('Starttime1.txt', 'starttime1');
     loadGitHubFile('Time1.txt', 'time1');
-    loadGitHubFile('TimeSchedule1.txt', 'timeSchedule1');
-    loadGitHubFile('Publieksaantal1.txt', 'publicAmount1');
-
-    // Als er meer bestanden zijn, kun je deze hier toevoegen (bijv. Date2.txt, enz.)
+    loadGitHubFile('TimeSchedule1.txt', 'timeschedule1');
+    loadGitHubFile('Publieksaantal1.txt', 'publieksaantal1');
 }
 
-// Roep de functie aan wanneer de pagina wordt geladen
-window.onload = loadAllFiles;
+// Zodra de pagina is geladen, roep de functie op om de gegevens te laden.
+window.onload = loadEventDetails;
