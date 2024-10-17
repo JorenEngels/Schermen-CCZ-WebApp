@@ -1,34 +1,43 @@
+/* Algemene opmaak voor de webpagina */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
-    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 h1 {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
+    text-align: center;
+    color: #333;
 }
 
-section {
-    margin: 20px auto;
-    width: 80%;
-    max-width: 600px;
-    background-color: white;
+.info-block {
+    background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-p {
-    font-size: 18px;
+.info-block h2 {
+    color: #444;
+}
+
+.info-block p {
+    font-size: 1.2em;
     margin: 10px 0;
 }
 
 footer {
+    text-align: center;
     margin-top: 20px;
-    font-size: 14px;
-    color: #666;
+}
+
+footer p {
+    color: #888;
 }
