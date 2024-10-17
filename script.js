@@ -1,34 +1,30 @@
-async function loadGitHubFile(fileName, elementId) {
-    const repo = 'JorenEngels/Schermen-CCZ-WebApp';
-    const branch = 'main';
-    const url = `https://raw.githubusercontent.com/${repo}/${branch}/${fileName}`;
+// Functie om tekstbestanden op te halen en hun inhoud te tonen
+function fetchData(filename, elementId) {
+    const url = `https://raw.githubusercontent.com/JorenEngels/Schermen-CCZ-WebApp/main/${filename}`;
 
-    try {
-        const response = await fetch(url);
-        if (response.ok) {
-            const content = await response.text();
-            document.getElementById(elementId).innerText = content;
-            console.log(`Bestand geladen: ${fileName}`);
-        } else {
-            console.error(`Fout bij het laden van ${fileName}: ${response.status}`);
-            document.getElementById(elementId).innerText = `Fout bij het laden van ${fileName}`;
-        }
-    } catch (error) {
-        console.error(`Error fetching file ${fileName}:`, error);
-        document.getElementById(elementId).innerText = `Error fetching ${fileName}`;
-    }
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Fout bij het ophalen van ${filename}: ${response.statusText}`);
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById(elementId).innerText = data;
+        })
+        .catch(error => {
+            console.error('Er is een fout opgetreden:', error);
+            document.getElementById(elementId).innerText = 'Fout bij laden';
+        });
 }
 
-// Deze functies laden de specifieke bestanden van GitHub en voegen ze toe aan de HTML-elementen.
-function loadEventDetails() {
-    loadGitHubFile('Date1.txt', 'date1');
-    loadGitHubFile('Meal1.txt', 'meal1');
-    loadGitHubFile('Naam1.txt', 'name1');
-    loadGitHubFile('Starttime1.txt', 'starttime1');
-    loadGitHubFile('Time1.txt', 'time1');
-    loadGitHubFile('TimeSchedule1.txt', 'timeschedule1');
-    loadGitHubFile('Publieksaantal1.txt', 'publieksaantal1');
-}
-
-// Zodra de pagina is geladen, roep de functie op om de gegevens te laden.
-window.onload = loadEventDetails;
+// Alle bestanden laden bij het laden van de pagina
+document.addEventListener("DOMContentLoaded", function() {
+    fetchData('Date1.txt', 'datum');
+    fetchData('Meal1.txt', 'maaltijd');
+    fetchData('Naam1.txt', 'naam');
+    fetchData('Starttime1.txt', 'starttijd');
+    fetchData('Time1.txt', 'tijd');
+    fetchData('TimeSchedule1.txt', 'tijdschaal');
+    fetchData('Publieksaantal1.txt', 'publieksaantal');
+});
