@@ -38,9 +38,10 @@ body::before {
 /* Stijl voor het blok met informatie */
 .info-block {
     width: 60%;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(0, 0, 0, 0.7); /* Zwart met transparantie */
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white; /* Tekstkleur wit voor beter contrast */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Een subtiele schaduw */
 }
 
 /* Afbeelding rechts */
