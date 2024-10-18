@@ -1,40 +1,14 @@
 /* Algemene stijlen */
-body {
+body, html {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    height: 100%;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Container voor de volledige pagina */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-}
-
-/* Stijl voor het blok met informatie */
-.info-block {
-    width: 60%;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1;
-    position: relative;
-}
-
-/* Voorkom dat de achtergrondafbeelding het blok overlapt */
-.info-block h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-/* Achtergrondafbeelding dimmen en vervagen */
-.container::before {
+/* Volledige achtergrondafbeelding dimmen en vervagen */
+body::before {
     content: '';
     position: absolute;
     top: 0;
@@ -45,17 +19,42 @@ body {
     background-size: cover;
     background-position: center;
     opacity: 0.5;
-    filter: blur(10px);
-    z-index: 0;
+    filter: blur(8px);
+    z-index: -1;
 }
 
-/* Heldere afbeelding rechts */
+/* Container voor de volledige pagina */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+}
+
+/* Stijl voor het blok met informatie */
+.info-block {
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Afbeelding rechts */
 #event-image {
     max-width: 35%;
     height: auto;
-    position: relative;
-    z-index: 1;
     margin-left: 20px;
+}
+
+/* Stijl voor de header */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
 }
 
 /* Stijl voor de footer */
