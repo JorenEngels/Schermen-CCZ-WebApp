@@ -8,12 +8,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="background-overlay"></div>
     <div class="container">
         <h1>Welcome to Cultuurcentrum Zwaneberg</h1>
-        <div class="content">
-            <div class="info-column">
-                <h2>Schouwburg</h2>
+        <div class="info-block">
+            <!-- Kolom 1: Informatie -->
+            <div class="column" id="info-column">
                 <p><strong>Date:</strong> <span id="datum">Laden...</span></p>
                 <p><strong>Dinner:</strong> <span id="maaltijd">Laden...</span></p>
                 <p><strong>Event:</strong> <span id="naam">Laden...</span></p>
@@ -22,11 +21,14 @@
                 <p><strong>Time Schedule:</strong> <span id="tijdschaal">Laden...</span></p>
                 <p><strong>Ticket Sale:</strong> <span id="publieksaantal">Laden...</span></p>
             </div>
-            <div class="image-column">
-                <img id="event-image" src="Image1.jpg" alt="Event Image">
+
+            <!-- Kolom 2: Afbeelding -->
+            <div class="column" id="image-column">
+                <img id="event-image" src="Image1.jpg" alt="Event image" style="max-width: 100%;">
             </div>
         </div>
     </div>
+
     <footer>
         <p>© 2024 Cultuurcentrum Zwaneberg - AV-Enjo</p>
     </footer>
