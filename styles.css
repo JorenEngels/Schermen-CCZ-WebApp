@@ -29,11 +29,17 @@ body::before {
     margin: 0 auto;
     padding: 20px;
     display: flex;
+    flex-direction: column; /* Header boven info en afbeelding */
+    position: relative;
+    z-index: 1;
+}
+
+/* Sub-container voor info en afbeelding naast elkaar */
+.info-image-container {
+    display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    position: relative;
-    flex-direction: column; /* Header boven info en afbeelding */
-    z-index: 1;
+    margin-top: 20px;
 }
 
 /* Stijl voor de header */
