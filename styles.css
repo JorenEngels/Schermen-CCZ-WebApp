@@ -1,57 +1,70 @@
 /* Algemene stijlen */
-body, html {
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    height: 100%;
 }
 
+/* Container voor de volledige pagina */
 .container {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    color: #fff;
-}
-
-.info-block {
-    background-color: rgba(0, 0, 0, 0.5);
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    margin-top: 50px;
-    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
 }
 
-h1, h2 {
-    margin: 0;
-    padding-bottom: 10px;
+/* Stijl voor het blok met informatie */
+.info-block {
+    width: 60%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    position: relative;
 }
 
-/* Achtergrondafbeelding met 50% vervaging en dimming */
-.background-image {
+/* Voorkom dat de achtergrondafbeelding het blok overlapt */
+.info-block h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Achtergrondafbeelding dimmen en vervagen */
+.container::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
     background-image: url('Image1.jpg');
     background-size: cover;
     background-position: center;
-    filter: blur(5px) brightness(50%);
-    z-index: -1;
+    opacity: 0.5;
+    filter: blur(10px);
+    z-index: 0;
 }
 
-/* Voorgrondafbeelding */
-.foreground-image img {
-    width: 300px;
+/* Heldere afbeelding rechts */
+#event-image {
+    max-width: 35%;
     height: auto;
-    border-radius: 15px;
-    margin-top: 20px;
+    position: relative;
+    z-index: 1;
+    margin-left: 20px;
 }
 
-/* Footer */
+/* Stijl voor de footer */
 footer {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
     text-align: center;
-    color: #fff;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
