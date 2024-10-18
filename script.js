@@ -1,44 +1,29 @@
 window.onload = function() {
-    // Ophalen van de tekstbestanden en invullen in de HTML elementen
-    fetch('./Date1.txt')
+    fetch('Date1.txt')
         .then(response => response.text())
-        .then(data => {
-            document.getElementById('datum').innerText = data;
-        });
+        .then(data => document.getElementById('datum').textContent = data);
 
-    fetch('./Meal1.txt')
+    fetch('Meal1.txt')
         .then(response => response.text())
-        .then(data => {
-            document.getElementById('maaltijd').innerText = data;
-        });
+        .then(data => document.getElementById('maaltijd').textContent = data);
 
-    fetch('./Naam1.txt')
+    fetch('Naam1.txt')
         .then(response => response.text())
-        .then(data => {
-            document.getElementById('naam').innerText = data;
-        });
+        .then(data => document.getElementById('naam').textContent = data);
 
-    fetch('./Starttime1.txt')
+    fetch('Starttime1.txt')
         .then(response => response.text())
-        .then(data => {
-            document.getElementById('starttijd').innerText = data;
-        });
+        .then(data => document.getElementById('starttijd').textContent = data);
 
-    fetch('./Time1.txt')
+    fetch('Time1.txt')
         .then(response => response.text())
-        .then(data => {
-            document.getElementById('tijd').innerText = data;
-        });
+        .then(data => document.getElementById('tijd').textContent = data);
 
-    fetch('./TimeSchedule1.txt')
+    fetch('TimeSchedule1.txt')
         .then(response => response.text())
-        .then(data => {
-            document.getElementById('tijdschaal').innerText = data;
-        });
+        .then(data => document.getElementById('tijdschaal').textContent = data);
 
-    fetch('./Publieksaantal1.txt')
+    fetch('Publieksaantal1.txt')
         .then(response => response.text())
-        .then(data => {
-            document.getElementById('publieksaantal').innerText = data;
-        });
+        .then(data => document.getElementById('publieksaantal').textContent = data);
 };
