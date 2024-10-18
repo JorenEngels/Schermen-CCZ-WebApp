@@ -29,7 +29,7 @@ body::before {
     margin: 0 auto;
     padding: 20px;
     display: flex;
-    flex-direction: column; /* Header boven info en afbeelding */
+    flex-direction: column;
     position: relative;
     z-index: 1;
 }
@@ -38,16 +38,8 @@ body::before {
 .info-image-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: stretch; /* Stretch zorgt ervoor dat beide elementen dezelfde hoogte hebben */
     margin-top: 20px;
-}
-
-/* Stijl voor de header */
-h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 40px;
-    width: 100%; /* De header over de volledige breedte */
 }
 
 /* Stijl voor het blok met informatie */
@@ -56,14 +48,23 @@ h1 {
     background-color: rgba(0, 0, 0, 0.7); /* Zwart met transparantie */
     padding: 20px;
     color: white; /* Tekstkleur wit voor beter contrast */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Een subtiele schaduw */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Afbeelding rechts */
 #event-image {
-    max-width: 35%;
-    height: auto;
+    width: 35%;
+    height: auto; /* Automatisch aanpassen aan de hoogte van het info-blok */
+    object-fit: cover; /* Zorgt ervoor dat de afbeelding de juiste verhoudingen behoudt */
     margin-left: 20px;
+}
+
+/* Stijl voor de header */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+    width: 100%;
 }
 
 /* Stijl voor de footer */
