@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const timeScheduleLines = data.split('\n');
             timeScheduleLines.forEach(line => {
                 const lineElement = document.createElement('p');
+                lineElement.classList.add('schedule-line');  // Gebruik dezelfde stijl
                 lineElement.textContent = line;
                 timeScheduleElement.appendChild(lineElement);
             });
