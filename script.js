@@ -21,7 +21,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     fetch('https://raw.githubusercontent.com/JorenEngels/Schermen-CCZ-WebApp/main/TimeSchedule1.txt')
         .then(response => response.text())
-        .then(data => document.getElementById('tijdschaal').textContent = data);
+        .then(data => {
+            const timeScheduleElement = document.getElementById('tijdschaal');
+            const timeScheduleLines = data.split('\n');
+            timeScheduleLines.forEach(line => {
+                const lineElement = document.createElement('p');
+                lineElement.textContent = line;
+                timeScheduleElement.appendChild(lineElement);
+            });
+        });
 
     fetch('https://raw.githubusercontent.com/JorenEngels/Schermen-CCZ-WebApp/main/Publieksaantal1.txt')
         .then(response => response.text())
