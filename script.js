@@ -1,11 +1,22 @@
-// Deze code laadt de gegevens uit de .txt bestanden
-document.getElementById('datum').innerText = 'Datum informatie';
-document.getElementById('maaltijd').innerText = 'Maaltijd informatie';
-document.getElementById('naam').innerText = 'Evenement naam';
-document.getElementById('starttijd').innerText = 'Starttijd informatie';
-document.getElementById('tijd').innerText = 'Tijd informatie';
-document.getElementById('tijdschaal').innerText = 'Start Opbouw: 17:00\nStart Voorstelling: 20:00\nEinde Voorstelling: 21:00\nStart Pauze: 21:00\nEinde Pauze: 21:20\nStart Voorstelling: 21:20\nEinde Voorstelling: 22:20\nAfbouw (start): 22:20\nAfbouw (stop): 00:20';
-document.getElementById('publieksaantal').innerText = '100';
+// Tekstbestanden correct koppelen
+async function loadText(filename, elementId) {
+    try {
+        let response = await fetch(filename);
+        let text = await response.text();
+        document.getElementById(elementId).innerText = text;
+    } catch (error) {
+        document.getElementById(elementId).innerText = 'Geen informatie';
+    }
+}
 
-// Afbeelding updaten
-document.getElementById('event-image').src = 'Image1.jpg';
+// Correcte tekstbestanden koppelen
+loadText('Date1.txt', 'datum');
+loadText('Meal1.txt', 'maaltijd');
+loadText('Naam1.txt', 'naam');
+loadText('Starttime1.txt', 'starttijd');
+loadText('Time1.txt', 'tijd');
+loadText('TimeSchedule1.txt', 'tijdschaal');
+loadText('Publieksaantal1.txt', 'publieksaantal');
+
+// Afbeelding correct plaatsen
+document.getElementById('image').src = 'Image1.jpg';
