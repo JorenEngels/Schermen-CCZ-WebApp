@@ -12,9 +12,9 @@
     z-index: -1;
 }
 
-/* Zwart en doorzichtig informatieblok */
+/* Informatieblok */
 .info-block {
-    background-color: rgba(0, 0, 0, 0.7); /* Zwart met doorzichtigheid */
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
     color: white;
@@ -22,7 +22,7 @@
     margin: 0 auto;
 }
 
-/* Voor 16:9 verhouding */
+/* Stijl voor 16:9 verhouding */
 .container {
     width: 100vw;
     height: 100vh;
@@ -30,25 +30,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
 h1 {
-    position: absolute;
-    top: 40px;
-    width: 90%;
-    text-align: center;
     color: white;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-/* Kolommen naast elkaar zetten */
-.info-block {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 90%;
-}
-
-.column {
-    width: 45%;
+h2 {
+    margin-top: 0;
 }
