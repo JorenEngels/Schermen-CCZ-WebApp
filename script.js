@@ -1,30 +1,44 @@
-// Functie om tekstbestanden op te halen en hun inhoud te tonen
-function fetchData(filename, elementId) {
-    const url = `https://raw.githubusercontent.com/JorenEngels/Schermen-CCZ-WebApp/main/${filename}`;
-
-    fetch(url)
+// Functie om tekstbestanden in te laden
+function loadTextFile(elementId, filePath) {
+    fetch(filePath)
         .then(response => {
-            if (!response.ok) {
-                throw new Error(`Fout bij het ophalen van ${filename}: ${response.statusText}`);
+            if (response.ok) {
+                return response.text();
+            } else {
+                throw new Error('Bestand niet gevonden: ' + filePath);
             }
-            return response.text();
         })
-        .then(data => {
-            document.getElementById(elementId).innerText = data;
+        .then(text => {
+            document.getElementById(elementId).innerText = text;
         })
         .catch(error => {
-            console.error('Er is een fout opgetreden:', error);
-            document.getElementById(elementId).innerText = 'Fout bij laden';
+            console.error('Fout bij het laden van bestand:', error);
+            document.getElementById(elementId).innerText = "Geen informatie beschikbaar.";
         });
 }
 
-// Alle bestanden laden bij het laden van de pagina
-document.addEventListener("DOMContentLoaded", function() {
-    fetchData('Date1.txt', 'datum');
-    fetchData('Meal1.txt', 'maaltijd');
-    fetchData('Naam1.txt', 'naam');
-    fetchData('Starttime1.txt', 'starttijd');
-    fetchData('Time1.txt', 'tijd');
-    fetchData('TimeSchedule1.txt', 'tijdschaal');
-    fetchData('Publieksaantal1.txt', 'publieksaantal');
-});
+// Gegevens inladen uit de tekstbestanden
+window.onload = function() {
+    loadTextFile('datum', 'Date1.txt');
+    loadTextFile('maaltijd', 'Meal1.txt');
+    loadTextFile('naam', 'Naam1.txt');
+    loadTextFile('starttijd', 'Starttime1.txt');
+    loadTextFile('tijd', 'Time1.txt');
+    loadTextFile('tijdschaal', 'TimeSchedule1.txt');
+    loadTextFile('publieksaantal', 'Publieksaantal1.txt');
+
+    // De afbeelding dynamisch inladen
+    const imageElement = document.getElementById('event-image');
+    fetch('Image1.jpg')
+        .then(response => {
+            if (response.ok) {
+                imageElement.src = 'Image1.jpg';
+            } else {
+                throw new Error('Afbeelding niet gevonden');
+            }
+        })
+        .catch(error => {
+            console.error('Fout bij het laden van de afbeelding:', error);
+            imageElement.alt = "Geen afbeelding beschikbaar";
+        });
+};
