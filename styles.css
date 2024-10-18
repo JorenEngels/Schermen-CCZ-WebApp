@@ -1,43 +1,54 @@
+/* Voor de wazige achtergrondafbeelding */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-image: url('Image1.jpg');
-    background-size: cover; /* Zorgt ervoor dat de afbeelding het hele scherm vult */
+    background-image: url('jouw-afbeelding.jpg');
+    background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Houdt de afbeelding vast bij scrollen */
-    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    filter: blur(8px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
-.container {
-    width: 90%; /* Houdt aan alle kanten 5% vrij zoals gevraagd */
-    margin: 40px auto; /* Zorgt voor 40px ruimte bovenaan en centreert horizontaal */
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.8); /* Witte achtergrond met een lichte transparantie */
-    border-radius: 10px; /* Maakt de hoeken afgerond */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Voegt een subtiele schaduw toe */
-    overflow: hidden; /* Voorkomt dat de inhoud buiten het vak komt */
-}
-
-h1 {
-    text-align: center;
-    font-size: 3em;
-    margin-bottom: 40px; /* 40px ruimte onder de titel */
-    color: #333;
-}
-
+/* Zwart en doorzichtig informatieblok */
 .info-block {
-    display: flex;
-    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.7); /* Zwart met doorzichtigheid */
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    max-width: 80%;
+    margin: 0 auto;
 }
 
-.column {
-    width: 48%;
+/* Voor 16:9 verhouding */
+.container {
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-#tijdschaal {
-    white-space: pre-line; /* Zorgt ervoor dat het tijdsschema correct op nieuwe regels wordt weergegeven */
+h1 {
+    position: absolute;
+    top: 40px;
+    width: 90%;
+    text-align: center;
+    color: white;
+}
+
+/* Kolommen naast elkaar zetten */
+.info-block {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.column {
+    width: 45%;
 }
