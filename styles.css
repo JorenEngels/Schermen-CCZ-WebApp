@@ -1,98 +1,43 @@
-/* Algemene opmaak */
-body, html {
+body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    color: #fff;
-    background-color: #111;
-    height: 100%;
-    overflow: hidden;
-}
-
-.background-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('Image1.jpg') no-repeat center center;
-    background-size: cover;
-    opacity: 0.5;
-    z-index: -1;
-    filter: blur(10px);
+    font-family: 'Arial', sans-serif;
+    background-image: url('Image1.jpg');
+    background-size: cover; /* Zorgt ervoor dat de afbeelding het hele scherm vult */
+    background-position: center;
+    background-attachment: fixed; /* Houdt de afbeelding vast bij scrollen */
+    background-repeat: no-repeat;
 }
 
 .container {
-    width: 90%;
-    margin: 0 auto;
-    padding-top: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: 90%; /* Houdt aan alle kanten 5% vrij zoals gevraagd */
+    margin: 40px auto; /* Zorgt voor 40px ruimte bovenaan en centreert horizontaal */
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8); /* Witte achtergrond met een lichte transparantie */
+    border-radius: 10px; /* Maakt de hoeken afgerond */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Voegt een subtiele schaduw toe */
+    overflow: hidden; /* Voorkomt dat de inhoud buiten het vak komt */
 }
 
 h1 {
-    font-size: 3em;
     text-align: center;
-    margin-bottom: 40px;
-    width: 100%;
-    padding: 0 5%;
+    font-size: 3em;
+    margin-bottom: 40px; /* 40px ruimte onder de titel */
+    color: #333;
 }
 
-.content {
+.info-block {
     display: flex;
     justify-content: space-between;
-    gap: 40px;
-    flex: 1;
 }
 
-.info-column {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    flex: 1;
-    border-radius: 10px;
-    overflow-y: auto; /* Zorg dat de tekst zich aanpast */
-    max-height: 80vh; /* Zorg dat het altijd binnen het scherm blijft */
+.column {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.info-column h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.info-column p {
-    font-size: 1.5em;
-    margin: 10px 0;
-}
-
-.info-column .schedule-line {
-    margin: 5px 0;
-}
-
-.image-column img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 1em;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Responsive styling */
-@media (max-width: 768px) {
-    .content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .image-column img {
-        max-width: 100%;
-        margin-top: 20px;
-    }
+#tijdschaal {
+    white-space: pre-line; /* Zorgt ervoor dat het tijdsschema correct op nieuwe regels wordt weergegeven */
 }
