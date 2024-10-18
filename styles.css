@@ -32,7 +32,16 @@ body::before {
     justify-content: space-between;
     align-items: flex-start;
     position: relative;
+    flex-direction: column; /* Header boven info en afbeelding */
     z-index: 1;
+}
+
+/* Stijl voor de header */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+    width: 100%; /* De header over de volledige breedte */
 }
 
 /* Stijl voor het blok met informatie */
@@ -49,13 +58,6 @@ body::before {
     max-width: 35%;
     height: auto;
     margin-left: 20px;
-}
-
-/* Stijl voor de header */
-h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 40px;
 }
 
 /* Stijl voor de footer */
