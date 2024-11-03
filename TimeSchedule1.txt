@@ -1,6 +1,4 @@
-Aankomst Techniek: 13:00
-Aankomst artiesten: 16:30
-Soundcheck: 17:00
-Diner: 18:00
-Start Voorstelling: 20:00
-Einde Voorstelling: 22:00
+Start Opbouw: 09:00
+Start Opbouw: 18:00
+Repetitie (start): 19:00
+Repetitie (stop): 23:00
