@@ -1,2 +1,4 @@
-Activiteit (start): 20:00
-Activiteit (stop): 21:45
+Start Voorstelling: 13:30
+Einde Voorstelling: 14:20
+Afbouw (start): 14:20
+Afbouw (stop): 16:20
