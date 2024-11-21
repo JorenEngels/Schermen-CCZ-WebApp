@@ -1,5 +1,3 @@
-Pianostemmer: 11:00
-Start Opbouw: 14:00
-Aankomst artiesten: 17:00
-Activiteit (start): 20:00
-Activiteit (stop): 21:30
+Start Opbouw: 12:00
+Start Voorstelling: 20:30
+Einde Voorstelling: 22:00
